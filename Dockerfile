@@ -1,11 +1,6 @@
 FROM debian
 
-RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && apt-get update
-
 RUN apt-get -y install python3 python3-pip
-
-RUN python3 -m pip install pip -U
-RUN pip3 config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 
 RUN pip3 install sanic markdown
 
