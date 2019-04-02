@@ -1,0 +1,75 @@
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+.tm {
+    background: #d0e2f7;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.tm-main {
+    margin: auto;
+    width: 500px;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tm-time {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 15vh;
+}
+
+.tm-btn-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    width: 60vw;
+    height: 30px;
+}
+
+.tm-btn {
+    margin: 0 10px;
+    background: #5793ce;
+    font-size: 14px;
+    border: 0;
+    border-radius: 12px;
+    color: #DDDDDD;
+    flex-grow: 1;
+    outline: none;
+}
+
+.tm-spliter {
+    width: 80vw;
+    height: 1px;
+    background: gray;
+    margin-top: 30px;
+}
+
+.tm-record-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    font-size: 18px;
+    color: #666;
+}
+
+.tm-record {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 20%;
+    box-sizing: border-box;
+}
+
+
+.tm-record:nth-child(2n){
+    background: #add2fc;
+}

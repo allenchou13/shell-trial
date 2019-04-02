@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        .list{
+            display: flex;
+            flex-direction: row;
+        }
+        .item{
+            background-color: lightgray;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="list" class='list'></div>
+    <pre id="content">
+    </div>
+
+    <script>
+        fetch('/api/md')
+            .then(res=> res.json())
+            .then(res=>{
+                var list = document.querySelector('#list');
+                $(list).empty();
+                res.forEach(element => {
+                    $(`<div class='item'>${element}</div>`).appendTo(list);
+                });
+            });
+
+
+        $(document).on('click', '.item', function(){
+            var name = $(this).text();
+            if(name == "" || name==null){
+                return;
+            }
+
+            fetch('/api/md/'+name)
+                .then(res=>res.text())
+                .then(res=>{
+                    document.querySelector('#content').innerHTML = res;
+                });
+        });
+    </script>
+</body>
+</html>

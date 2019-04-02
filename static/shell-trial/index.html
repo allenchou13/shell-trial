@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>shell trial</title>
+</head>
+<body>
+    <div>
+        <h1>aaa</h1>
+        <label>a:</label>
+        <input type="text" name="a" id="a">
+        <input type="button" value="确定" id="confirm">
+    </div>
+    <script>
+        document.querySelector('#confirm').addEventListener('click', function(){
+            var a = document.querySelector('#a').value;
+            if(a == null || a == ""){
+                return;
+            }
+            fetch('/api/a', {method:'POST'})
+            .then(res=>{
+                sessionStorage.setItem("a", a);
+                location.href = "shell.html";
+            });
+        });
+    </script>
+</body>
+</html>
